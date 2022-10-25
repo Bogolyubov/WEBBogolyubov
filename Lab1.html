@@ -1,21 +1,21 @@
 
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-
-<meta charset="UTF-8">
-<title>Document</title>
+  <meta charset="utf-8">
+  <title>lab_2-1</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+  var colors = ['Lavender', 'Thistle', 'Plum',  'Violet', 'Orchid', 'Fuchsia', 'Magenta', 'MediumOrchid'];
+    $(document).ready(function () {
+	   $("#a").click(function(){
+      $("body").css("backgroundColor", colors[Math.floor(Math.random() * colors.length)]);
+	  });
+    });
+  </script>
 </head>
 <body>
-<p>Первый абзац<br>Вторая строка<br>Третья строка<br>Четвертая строка</p>
-<a href="#" onclick="alert(); return false;">ОКНО</a>
-<script language="javascript">
-function alert(){
-if (confirm("Всем привет я диалоговое окно")) {
-    document.write("Здравсвуйте я окно браузера с приветствием", );
-}
-}
-</script>
-<p>Второй абзац <br>Вторая строка<br>Третья строка<br>Четвертая строка</p>
-</script>
+   <input type="button" id="a" value="Изменить цвет фона"/>
 </body>
 </html>

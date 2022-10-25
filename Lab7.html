@@ -1,18 +1,67 @@
-<html> <head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
-<title>array</title>
-<script language="JavaScript">
-function predmeti() {subjects = new Array("алгебра","геометрия","физика","химия","информатика","философия", "английский","литература","немецкий","психология");
-var math = new Array;
-math = subjects.slice(0, 5);
-var gym = new Array;
-gym  = subjects.slice(5, 10);
-document.write("Точные науки: " + math + "<br>"); document.write("Гуманитарные науки: " + gym  + "<br>");} </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мартынов В.Е.</title>
 </head>
+
 <body>
- </script>
- <script>
- predmeti();
- </script>
- </body>
-  </html>
+    <input type="text" id="content">
+    <input type="button" value="<<" id="clear">
+    <input type="button" value="C" id="reset">
+    <br>
+    <input type="button" value="1" id="num">
+    <input type="button" value="2" id="num">
+    <input type="button" value="3" id="num">
+    <input type="button" value="+" id="num">
+    <br>
+    <input type="button" value="4" id="num">
+    <input type="button" value="5" id="num">
+    <input type="button" value="6" id="num">
+    <input type="button" value="-" id="num">
+    <br>
+    <input type="button" value="7" id="num">
+    <input type="button" value="8" id="num">
+    <input type="button" value="9" id="num">
+    <input type="button" value="*" id="num">
+    <br>
+    <input type="button" value="0" id="num">
+    <input type="button" value="." id="num">
+    <input type="button" value="/" id="num">
+    <input type="button" value="=" id="calculate">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('input[id=num]').click(function () {
+            let content = $('#content').val();
+            let num = $(this).val();
+            $('#content').val(content + num);
+        });
+
+        $('input[id=clear]').click(function () {
+            $('#content').val($('#content').val().slice(0, -1));
+            if ($('#content').val() == '') {
+                $('#content').val('0');
+            }
+        });
+
+        $('input[id=reset]').click(function () {
+            $('#content').val('0');
+        });
+
+        $('#calculate').click(function () {
+            try {
+                let content = $('#content').val();
+                let result = new Function('return ' + content)();
+                $('#content').val(result);
+            } catch (e) {
+                alert(e);
+            }
+        });
+    </script>
+</body>
+
+</html>

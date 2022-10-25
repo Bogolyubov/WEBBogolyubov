@@ -1,19 +1,60 @@
 <html>
-<head>
-<title>for</title>
-<meta charset="UTF-8">
-</head>
-<body>
-<h1>Пример простой</h1>
-<script language="JavaScript" type="text/JavaScript">
-  var a=0;
-function line()
-{
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style>
+            .drag {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                top: 40%;
+                left: 45%;
+            };
+        </style>
+    </head>
+    <body>
+        <h1>Перетаскивание картинки</h1>
+        <img class="drag" src="lab2.jpg" alt="lab2" id="img1">
 
-document.writeln("<hr align='center' width='"+(a+=10)+ "'>  ");
-}
-for (var i=1; i<10; i++)
-line();
-</script>
-</body>
+        <script>
+            var img = document.getElementById("img1");
+
+            img.onmousedown = function(e) {
+            var coords = getCoords(img);
+            var shiftX = e.pageX - coords.left;
+            var shiftY = e.pageY - coords.top;
+            document.body.appendChild(img);
+            drag(e);
+            img.style.zIndex = 1000;
+
+            function drag(e) {
+            img.style.left = e.pageX - shiftX + 'px';
+            img.style.top = e.pageY - shiftY + 'px';
+            }
+
+            document.onmousemove = function(e) {
+            drag(e);
+            };
+
+            img.onmouseup = function() {
+            document.onmousemove = null;
+            img.onmouseup = null;
+            };
+            }
+
+            img.ondragstart = function() {
+            return false;
+            };
+
+            function getCoords(elem) {
+            var box = elem.getBoundingClientRect();
+            return {
+            top: box.top + pageYOffset,
+            left: box.left + pageXOffset
+            };
+            }
+
+        </script>
+    </body>
 </html>

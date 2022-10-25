@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+            <script>
+                var  result = 0;
+                var firt = 0;
+                var inek = 0;
+
+                function res1(){
+                    firt+=1;
+                }
+                function res2(){
+                    inek+=1;
+                }
+
+                function res(){
+                    result = firt + inek;
+                    if (firt < 1) {
+                    resfirt = Math.round(0);
+                    } else {
+                    resfirt = Math.round(firt*100/result);
+
+                    }
+
+                    if (inek < 1) {
+                    resinek = 0
+                    } else {
+                    resinek = Math.round(inek*100/result);
+                    }
+
+                    $("#data").html("Всего проголосовавших: " + result + '<br>' + "ФИРТ: "
+                    + resfirt + "%" + '<br>' + "ИНЭК: " + resinek + "%");
+                }
+
+            </script>
+    </head>
+    <body>
+        <form id="form1">
+            <h1>Опрос</h1>
+            <p>Укажите ваш факультет:</p>
+            <input type="button" name="answer1" id="answ1" value="ФИРТ" onclick="res1()">
+            <input type="button" name="answer2" id="answ2" value="ИНЭК" onclick="res2()"> <br>
+            <input type="button" name="result" id="result" value="Показать результат" onclick="res()">
+            <p id = "data"></p>
+        </form>
+    </body>
+</html>

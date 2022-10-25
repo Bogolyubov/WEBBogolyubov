@@ -1,35 +1,20 @@
 <html>
-<head>
-    <meta charset="UTF-8">
-<title>if</title>
-</head>
-<body>
-<script language="JavaScript" type="text/JavaScript">
-var x, y, password;
-password=123;
-x=parseInt(prompt("Введите значение х",'')); // метод parseInt() переводит строку в целое
-y=parseInt(prompt("Введите значение у",'')); // число
-if(x<y)
-{
-alert(" Максимальное число - y");
-}
-else if(x>y)
-{
-alert(" Максимальное число - x");
-}
-else
-{
-    alert("Числа равны");
-}
-b=parseInt(prompt("Введите пароль","пароль 123"));
-if(b==password)
-{
-    alert("пароль верный");
-}
-else
-{
-    alert("Пароль не верен");
-}
-</script>
-</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(document).mousemove(function(e){
+                    var x = e.pageX;
+                    var y = e.pageY;
+                    $("#coord").html("Координаты курсора: " + x + "; " + y);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Координаты мыши</h1>
+        <p id = "coord"></p>
+    </body>
 </html>
