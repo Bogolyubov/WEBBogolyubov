@@ -1,0 +1,132 @@
+<html>
+<head>
+	<meta meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="jquery-ui-1.13.1.custom/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="jquery-ui-1.13.1.custom/jquery-ui.js"></script>
+	<script src="script.js"></script>
+	<title>Билеты в кинотеатр</title>
+</head>
+<body>
+	<header class="head">
+
+	</header>
+
+<main class="main">
+
+
+	<div class="content_box">
+
+		<h1>Кинотеатры</h1>
+
+		<div class="container content" id="acc_con">
+	<div class="stage" id="accordion">
+		<h3>Глобал синема</h3>
+		<div>
+			<img src="global.jpg" alt="Глобал" class="picture">
+			<p>Современный 5-зальный кинотеатр в торгово-развлекательном центре "Меркурий".
+
+Все залы кинотеатра оснащены современным цифровым оборудованием и имеют возможность демонстрировать кинофильмы в формате Real 3D. Залы оборудованы современными удобными креслами, что обеспечивает максимальный комфорт для зрителей. В фойе киноцентра расположен уютный кино-бар с широким ассортиментом.
+		</div>
+
+		<h3>ULTRA</h3>
+		<div>
+			<img src="ULTRA.jpg" alt="ULTRA" class="picture">
+			<p>
+Кинотеатр ULTRA CINEMA в Уфе расположен по адресу ул. Бакалинская, 27, в ТРЦ «Ультра».
+
+Кинокомплекс был открыт в феврале 2017 года и уже полюбился жителям и гостям города Уфы. Это новый семизальный кинотеатр на 1044 посадочных места. Передовое оборудование позволяет демонстрировать фильмы в 2D и 3D форматах.
+
+Стильный интерьер, комфортабельные кресла, яркая и четкая картинка на экране, чистый и глубокий звук, свежий ароматный попкорн - вот формула идеального похода в кино!
+
+Цены на все форматы одинаковые, чтобы посетитель не сомневался в выборе.
+		</div>
+
+		<h3>Киномакс</h3>
+		<div>
+			<img src="KINOMAX.jpg" alt="Киномакс" class="picture">
+			<p>Кинотеатр «Киномакс» в Уфе — это мультиплекс нового поколения, предлагающий зрителям повышенный комфорт. Находится он на 2-м этаже крупного ТРК «Планета». Общая вместимость кинозалов — 2214 мест.
+
+В каждом кинозале установлены звуковые системы DolbyDigitalSurround EX, цифровые проекторы, широкоформатные экраны, эргономичные кресла. Кинопоказы осуществляются в форматах 2D и 3D. Кроме больших зрительных залов в этом киноцентре имеется VIP-зал на 47 мест с кожаными креслами, а также роскошный зал LUXE.
+
+Только в кинотеатре «Киномакс» в Уфе зрителям предлагается возможность смотреть фильмы в интерактивных креслах «Д-БОКС», которые вибрируют и наклоняются в соответствии с действиями, происходящими на экране.
+В фойе кинотеатра «Киномакс» находится консешн-бар с хорошим выбором попкорна и прохладительных напитков.
+		</div>
+	</div>
+	<style>
+			.picture{
+				position: relative;
+				width: 200px;
+				height: auto;
+			}
+		</style>
+		</div>
+		<br>
+		<div id="dialog" class="dialog" title="Покупка билета">
+		<form class="form-inline">
+		<div class="form-group">
+		<label >ФИО</label><br>
+		<input type="text" name="name" id="name">
+		<p>
+
+		<label for="row">Выберите ряд:</label>
+		<input type="text" name="row" id="row">
+		<p>
+		<div id="slider"></div>
+		<p>
+
+			<label for="place">Выберите место:</label>
+			<input type="text" name="place" id="place">
+			<p>
+			<div id="slider1"></div>
+			<p>
+
+		<label for="comp">Выберите кинотеатр:</label>
+		<input type="text" name="comp" list="lst" id="comp">
+		<datalist id="lst">
+		<option value="Глобал синема">
+		<option value="ULTRA">
+		<option value="Киномакс">
+		</datalist>
+		<p>
+
+		<label for="date">Дата: </label>
+		<input type="text" id="date">
+		<p>
+
+
+		<p>
+		</div>
+		</form>
+		</div>
+		<button class="btn" id="open" >Купить билет</button>
+		</div>
+	</div>
+</main>
+
+	<div id="confirm" class="confirm" title="Подтверждение" style="display: none;">
+		<div class="confirmName" id="confirmName">
+			<label for="cN">Билет на имя: </label>
+			<input type="text" name="cN" id="cN">
+			<p>
+			<label for="R">Ряд:</label>
+			<input type="text" name="R" id="R">
+			<p>
+			<label for="P">Место:</label>
+			<input type="text" name="P" id="P">
+			<p>
+			<label for="C">Кинотеатр</label>
+			<input type="text" name="C" id="C">
+			<p>
+			<label for="D">Дата: </label>
+			<input type="text" name="D" id="D">
+			<p>
+			<label for="Price">Цена: </label>
+			<input type="text" name="Price" id="Price">
+			<h2>Подтвердить покупку билета?</h2>
+		</div>
+	</div>
+
+	<div id="succ" class="succ" title="Уведомление" style="display: none;"><h2>Билет успешно приобретен!</h2></div>
+</body>
+</html>
